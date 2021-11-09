@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  app:
+    build: 
+      context: .
+    environment:
+      # Your discord application's access token
+      TOKEN: "example.access.token"
+      # User id of the invited bot
+      BOT_ID: "000000000000000000"
+      # Discord server id that the bot joined
+      GUILD_ID: "000000000000000000"
+      # Bonuz discord secret
+      DISCORD_SECRET: "iamasecret"
+      # Your bonuz app's base url
+      BONUZ_APP_URL: "https://example.com"
+      
+
+      
+

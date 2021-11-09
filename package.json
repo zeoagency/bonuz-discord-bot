@@ -1,0 +1,31 @@
+{
+	"name": "bonuz-discord-bot",
+	"version": "1.0.0",
+	"description": "A bot for bonuz app to work in discord chat.",
+	"main": "app.js",
+	"scripts": {
+		"format": "prettier --write .",
+		"start": "node app",
+		"dev": "nodemon",
+		"deploy": "node ./deployCommands.js"
+	},
+	"keywords": [
+		"discord",
+		"discord.js",
+		"bonuz"
+	],
+	"author": "Burak Alagözoğlu",
+	"license": "MIT",
+	"dependencies": {
+		"@discordjs/builders": "^0.7.0",
+		"@discordjs/rest": "0.1.0-canary.0",
+		"axios": "^0.24.0",
+		"discord-api-types": "^0.24.0",
+		"discord.js": "^13.3.0-dev.1634688315.579569a",
+		"dotenv": "^8.2.0"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.6",
+		"prettier": "^2.2.1"
+	}
+}
