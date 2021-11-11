@@ -58,6 +58,37 @@ client.on('interactionCreate', async interaction => {
 
 
 	}
+
+	else if (commandName === 'bonuzlink') {
+
+
+		const email = interaction.options.getString('email', true);
+		if (email) {
+			const sender = mapGuildMember(interaction.user);
+			try {
+				const requestData = {
+					sender,
+					email,
+				}
+				const res = await axios.post(config.bonuz_app_url + '/bots/discord/link', requestData, {
+					headers: {
+						"DiscordSecret": config.discord_secret
+					}
+				});
+				await interaction.reply({ content: "Your discord account is now linked to " + email + ".", ephemeral: true });
+			}
+			catch (err) {
+				if (!err?.response?.data) {
+					console.log(err);
+				}
+				await interaction.reply({ content: err?.response?.data || 'something went wrong', ephemeral: true });
+			}
+			return;
+		}
+
+
+
+	}
 });
 
 

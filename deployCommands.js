@@ -7,6 +7,9 @@ const commands = [
     new SlashCommandBuilder().setName('bonuz').setDescription('Give bonuz to someone.').addStringOption(option => {
         return option.setName('message').setDescription('Bonuz message.\nExample: +20 @john @marry thanks for helping.').setRequired(true);
     }),
+    new SlashCommandBuilder().setName('bonuzlink').setDescription('Link your discord account to your bonuz account.').addStringOption(option => {
+        return option.setName('email').setDescription('Your bonuz mail address.').setRequired(true);
+    }),
 ]
     .map(command => command.toJSON());
 
